@@ -6,7 +6,7 @@ import Gio from 'gi://Gio';
 import St from 'gi://St';
 
 const DEBUG = true;
-const LOG_FILE_PATH = GLib.get_home_dir() + '/instant-capture-debug.log';
+const LOG_FILE_PATH = GLib.get_user_cache_dir() + '/auto-capture-debug.log';
 
 function logDebug(msg) {
     if (!DEBUG) return;
