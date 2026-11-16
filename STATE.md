@@ -15,11 +15,15 @@ GhostShot v2 on extensions.gnome.org, and a product site at ghostshot.deepanalve
 - `test/run-headless.sh` passes 15 of 15 checks on GNOME Shell 50.1.
 - `*.deepanalve.dev` already points at biriyani through Cloudflare. A site needs only a Dokploy compose with Traefik labels, like postsound-site.
 
+- Site: Deepan rejected directions A (Darkroom) and B (Contact sheet) as boring to look at. He picked C (instant camera) over D (flatbed scanner) on 2026-11-16. All four stay in `site/concepts/` and are left out of the Docker image.
+- The site passes drag, R, F and keyboard checks at 320, 375, 414, 768, 1024 and 1440 px, with no console errors, under the real nginx CSP in a local Docker run.
+- Dokploy's GitHub app sees `screenshot-pro`. The name `ghostshot` is free on GitHub.
+
 ## Uncertain
 - v2 is not loaded in Deepan's own session. Wayland needs a log out to load new extension code.
 - v2 is not tested on GNOME 45 to 49. The code avoids APIs that changed, but no shell of those versions ran it.
 
 ## Next
-1. Design the site (two directions), build the one Deepan picks, deploy it on Dokploy.
+1. With Deepan's OK: push, create the Dokploy compose `ghostshot-site` from `deploy/docker-compose.yml`, deploy, and check it live.
 2. Upload v2 to extensions.gnome.org with a screenshot and the new description.
 3. Ask Deepan before renaming the GitHub repo to `ghostshot` and before removing `screenshot-pro.zip`.
