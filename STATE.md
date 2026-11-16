@@ -28,6 +28,7 @@ GhostShot v2 on extensions.gnome.org, and a product site at ghostshot.deepanalve
 - v2 is not tested on GNOME 45 to 49. The code avoids APIs that changed, but no shell of those versions ran it.
 
 ## Next
-1. Deepan logs in to extensions.gnome.org. Then Claude uploads `dist/auto-capture@deepan.shell-extension.zip` and stops before Submit for his OK.
-2. Set the listing URL to ghostshot.deepanalve.dev and add `site/img/og.png` as the screenshot.
-3. Ask Deepan before removing `screenshot-pro.zip`.
+1. Wait for the review of version 2.0 (uploaded 2026-11-16, review page /review/78518). Version 1 stays active until then.
+2. Optional: add `site/img/og.png` as the listing screenshot on extensions.gnome.org.
+3. Deepan mentioned earlier reviewer notes on 2026-11-16, then said to leave them. Nothing was found on the review pages.
+4. Ask Deepan before removing `screenshot-pro.zip`.
