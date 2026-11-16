@@ -11,7 +11,7 @@
   const keycaps = [...document.querySelectorAll('[data-key]')];
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const MIN = 10;
-  const MAX_TRAY = 4;
+  const MAX_TRAY = Number(tray?.dataset.max) || 4;
 
   const held = { r: false, f: false };
   let picked = 'image';
@@ -79,6 +79,7 @@
     drag = { id: e.pointerId, start: local(e) };
     place({ ...drag.start, w: 0, h: 0 });
     stage.classList.add('is-dragging');
+    document.documentElement.dataset.gs = 'dragging';
   });
 
   stage.addEventListener('pointermove', (e) => {
@@ -93,6 +94,7 @@
     const r = drag.rect;
     drag = null;
     stage.classList.remove('is-dragging');
+    document.documentElement.dataset.gs = 'idle';
     if (!r || r.w < MIN || r.h < MIN) { stage.classList.remove('has-sel'); return; }
     capture(r);
   }
@@ -101,6 +103,7 @@
     if (!drag || e.pointerId !== drag.id) return;
     drag = null;
     stage.classList.remove('is-dragging', 'has-sel');
+    document.documentElement.dataset.gs = 'idle';
   });
 
   // Keyboard and screen reader path: capture a set area.
@@ -163,6 +166,8 @@
   function thumbSlot() {
     if (!tray) return { w: 168, h: 112 };
     const cs = getComputedStyle(tray);
+    const fixed = parseFloat(cs.getPropertyValue('--thumb-w'));
+    if (fixed) return { w: fixed, h: fixed * 0.66 };
     const cols = cs.gridTemplateColumns.split(' ').filter(Boolean).length || 1;
     const gap = parseFloat(cs.columnGap) || 0;
     const w = Math.max(80, (tray.clientWidth - gap * (cols - 1)) / cols - 16);
@@ -196,7 +201,7 @@
   async function capture(r) {
     const m = mode();
     shots += 1;
-    for (const c of counters) c.textContent = String(shots);
+    for (const c of counters) c.textContent = String(shots).padStart(Number(c.dataset.pad) || 0, '0');
 
     stage.classList.remove('flash');
     void stage.offsetWidth;
@@ -206,6 +211,7 @@
     const item = document.createElement('li');
     item.className = 'gs-shot';
     item.dataset.mode = m;
+    item.dataset.n = String(shots).padStart(3, '0');
     const meta = document.createElement('p');
     meta.className = 'gs-meta';
     let body;
@@ -231,7 +237,8 @@
       void toast.offsetWidth;
       toast.classList.add('is-ghost');
     }
-    document.dispatchEvent(new CustomEvent('ghostshot:capture', { detail: { mode: m, rect: r } }));
+    document.documentElement.dataset.gsShot = String(shots);
+    document.dispatchEvent(new CustomEvent('ghostshot:capture', { detail: { mode: m, rect: r, n: shots } }));
   }
 
   paintMode();

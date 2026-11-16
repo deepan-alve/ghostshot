@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GhostShot · Drag, release, done</title>
+  <meta name="description" content="GhostShot is a GNOME Shell extension. It takes the screenshot when you let go of the mouse. No capture button, no toast.">
+  <meta name="theme-color" content="#1b1c1e">
+  <link rel="icon" href="/img/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/concepts/d.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/"><img src="/img/mark.svg" alt="" width="26" height="26">GhostShot</a>
+    <nav aria-label="Main">
+      <a href="#setup">Set up</a>
+      <a href="https://github.com/deepan-alve/screenshot-pro">Source</a>
+      <a class="nav-cta" href="https://extensions.gnome.org/extension/9786/instant-area-screenshot/">Install</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="intro">
+        <h1>Drag.<br>Release.<br><span>Done.</span></h1>
+        <p class="lede">GhostShot is a GNOME Shell extension. It takes the screenshot the moment you let go. Put your mouse on the glass.</p>
+      </div>
+
+      <div class="machine" aria-label="GhostShot scanner">
+        <div class="deck">
+          <div class="glass">
+            <div class="stage" data-stage aria-label="Scanner glass. Drag to select, release to scan.">
+              <div class="doc">
+                <div class="doc-photo"><span class="ph-sun"></span><span class="ph-sea"></span></div>
+                <div class="doc-text" id="doc">
+                  <p class="doc-kicker">Release notes</p>
+                  <p class="doc-title">GhostShot 2.0</p>
+                  <p>Every drag captures, not only the first.</p>
+                  <p>Hold R to copy the words in the area.</p>
+                  <p>Hold F to copy where the file landed.</p>
+                  <p>A drag never starts a recording.</p>
+                </div>
+                <p class="doc-boo">boo</p>
+                <p class="doc-foot">GNOME 45 to 50 · GPL-3.0</p>
+              </div>
+              <p class="ghost-toast" data-toast aria-hidden="true"><b>Screenshot captured</b>skipped</p>
+            </div>
+            <span class="scanbar" aria-hidden="true"></span>
+          </div>
+          <p class="deck-label">Drag on the glass</p>
+        </div>
+
+        <div class="controls">
+          <div class="readout"><span class="dot"></span><span class="ro-k">Scans</span><span class="ro-v" data-count data-pad="2">00</span></div>
+          <div class="knobs" role="group" aria-label="What a shot copies">
+            <button type="button" class="knob" data-mode-btn="image"><span class="knob-face"></span><span class="knob-label">Image</span></button>
+            <button type="button" class="knob" data-mode-btn="text" data-key="r"><span class="knob-face">R</span><span class="knob-label">Text</span></button>
+            <button type="button" class="knob" data-mode-btn="path" data-key="f"><span class="knob-face">F</span><span class="knob-label">Path</span></button>
+          </div>
+          <p class="brandplate">GhostShot<span>GS 2</span></p>
+        </div>
+        <div class="tray-lip" aria-hidden="true"></div>
+      </div>
+
+      <ol class="outbox" data-tray data-max="4" aria-live="polite" aria-label="Clipboard"></ol>
+      <button type="button" class="sample" data-sample="#doc">No mouse? Scan the notes with the keyboard</button>
+    </section>
+
+    <section class="spec" id="setup">
+      <div class="spec-col">
+        <h2>Three ways to let go</h2>
+        <dl class="ways">
+          <div><dt>Release</dt><dd>Image on your clipboard. File in ~/Pictures/Screenshots.</dd></div>
+          <div><dt><kbd>R</kbd> + release</dt><dd>The words in the area, read by tesseract.</dd></div>
+          <div><dt><kbd>F</kbd> + release</dt><dd>The file path, ready for a terminal.</dd></div>
+        </dl>
+      </div>
+      <div class="spec-col">
+        <h2>Set up</h2>
+        <ol class="steps">
+          <li>Install from <a href="https://extensions.gnome.org/extension/9786/instant-area-screenshot/">extensions.gnome.org</a>.</li>
+          <li>Press <kbd>Print Screen</kbd>, drag, release.</li>
+          <li>For text: <code>sudo apt install tesseract-ocr</code></li>
+        </ol>
+        <p class="note">No toast for GhostShot's shots. Other notifications still show. Recording works as before.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Made by <a href="https://deepanalve.dev">Deepan Alve</a> · GPL-3.0</p>
+    <p><a href="https://github.com/deepan-alve/screenshot-pro">Source on GitHub</a></p>
+  </footer>
+
+  <script src="/capture.js"></script>
+  <script src="/concepts/d.js"></script>
+</body>
+</html>

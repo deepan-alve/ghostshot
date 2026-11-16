@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GhostShot · Drag, release, done</title>
+  <meta name="description" content="GhostShot is a GNOME Shell extension. It takes the screenshot when you let go of the mouse. No capture button, no toast.">
+  <meta name="theme-color" content="#d9d4cb">
+  <link rel="icon" href="/img/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/concepts/c.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/"><img src="/img/mark.svg" alt="" width="26" height="26">GhostShot</a>
+    <nav aria-label="Main">
+      <a href="#manual">Manual</a>
+      <a href="https://github.com/deepan-alve/screenshot-pro">Source</a>
+      <a class="nav-cta" href="https://extensions.gnome.org/extension/9786/instant-area-screenshot/">Install</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Let go.<br>It's taken.</h1>
+      <p class="lede">A GNOME Shell extension. Drag over an area, release, and the shot is already on your clipboard. Try it on the camera.</p>
+
+      <div class="cam" aria-label="GhostShot camera">
+        <div class="cam-body">
+          <span class="screw s1"></span><span class="screw s2"></span><span class="screw s3"></span><span class="screw s4"></span>
+
+          <div class="bezel">
+            <p class="bezel-label">Drag here</p>
+            <div class="stage" data-stage aria-label="Camera screen. Drag to select, release to take a shot.">
+              <div class="scene">
+                <span class="sun"></span>
+                <span class="hill h1"></span><span class="hill h2"></span>
+                <svg class="ghost" viewBox="0 0 64 72" aria-hidden="true">
+                  <path d="M32 4C17 4 8 15 8 30v34l8-6 8 6 8-6 8 6 8-6 8 6V30C56 15 47 4 32 4z" fill="#fbfaf7"/>
+                  <circle cx="24" cy="30" r="4" fill="#1d1b19"/><circle cx="40" cy="30" r="4" fill="#1d1b19"/>
+                  <ellipse cx="32" cy="42" rx="4" ry="5" fill="#1d1b19"/>
+                </svg>
+                <div class="note" id="note">
+                  <p class="note-title">New in v2</p>
+                  <p>Every drag captures.</p>
+                  <p>Hold R to read text.</p>
+                  <p>Hold F for the path.</p>
+                </div>
+                <p class="boo">boo.</p>
+              </div>
+              <p class="ghost-toast" data-toast aria-hidden="true"><b>Screenshot captured</b>skipped</p>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="lcd" aria-live="off">
+              <p><span class="lcd-k">SHOTS</span><span class="lcd-v" data-count data-pad="3">000</span></p>
+              <p><span class="lcd-k">MODE</span><span class="lcd-v lcd-mode"></span></p>
+            </div>
+            <div class="keys" role="group" aria-label="What a shot copies">
+              <button type="button" class="key" data-mode-btn="image"><span class="key-cap">I</span><span class="key-label">Image</span></button>
+              <button type="button" class="key" data-mode-btn="text" data-key="r"><span class="key-cap">R</span><span class="key-label">Read</span></button>
+              <button type="button" class="key" data-mode-btn="path" data-key="f"><span class="key-cap">F</span><span class="key-label">File</span></button>
+            </div>
+            <div class="shutter-row">
+              <span class="shutter" aria-hidden="true"></span>
+              <span class="shutter-label">release<br>to shoot</span>
+            </div>
+            <div class="grille" aria-hidden="true"></div>
+          </div>
+
+          <p class="model">GhostShot GS-2 · for GNOME 45 to 50</p>
+          <div class="slot" aria-hidden="true"><span></span></div>
+        </div>
+        <ol class="prints" data-tray data-max="5" aria-live="polite" aria-label="Clipboard"></ol>
+      </div>
+      <button type="button" class="sample" data-sample="#note">No mouse? Capture the note with the keyboard</button>
+    </section>
+
+    <section class="manual" id="manual">
+      <div class="sheet">
+        <p class="sheet-tag">Manual · page 1</p>
+        <h2>Three ways to let go</h2>
+        <ol class="ways">
+          <li><span class="way-key">release</span><h3>Image</h3><p>On your clipboard, and saved in ~/Pictures/Screenshots.</p></li>
+          <li><span class="way-key"><kbd>R</kbd> + release</span><h3>Text</h3><p>The words in the area, read by tesseract.</p></li>
+          <li><span class="way-key"><kbd>F</kbd> + release</span><h3>Path</h3><p>Where the file landed. Paste it in a terminal.</p></li>
+        </ol>
+      </div>
+      <div class="sheet sheet-2">
+        <p class="sheet-tag">Manual · page 2</p>
+        <h2>Set up</h2>
+        <ol class="steps">
+          <li>Install from <a href="https://extensions.gnome.org/extension/9786/instant-area-screenshot/">extensions.gnome.org</a>.</li>
+          <li>Press <kbd>Print Screen</kbd>, drag, release.</li>
+          <li>For text, add tesseract.<code>sudo apt install tesseract-ocr</code></li>
+        </ol>
+        <dl class="qa">
+          <dt>The toast?</dt><dd>Skipped for GhostShot's shots only. Other notifications still show.</dd>
+          <dt>Recording?</dt><dd>Unchanged. A drag never starts one.</dd>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Made by <a href="https://deepanalve.dev">Deepan Alve</a> · GPL-3.0</p>
+    <p><a href="https://github.com/deepan-alve/screenshot-pro">Source on GitHub</a></p>
+  </footer>
+
+  <script src="/capture.js"></script>
+  <script src="/concepts/c.js"></script>
+</body>
+</html>
