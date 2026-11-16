@@ -19,11 +19,15 @@ GhostShot v2 on extensions.gnome.org, and a product site at ghostshot.deepanalve
 - The site passes drag, R, F and keyboard checks at 320, 375, 414, 768, 1024 and 1440 px, with no console errors, under the real nginx CSP in a local Docker run.
 - Dokploy reads the repo through its GitHub app.
 
+- ghostshot.deepanalve.dev is live on 2026-11-16. Dokploy project `ghostshot`, compose `ghostshot-site` (id `bqI9k91NT4ZFRYFP0iTR8`), branch `master`. Redeploy with `POST /api/compose.deploy {"composeId": ...}`. Evidence: / returns 200, /concepts returns 404, the origin has a Let's Encrypt cert, and Playwright found no console errors at 1440 and 390 px.
+- Cloudflare injects its Web Analytics beacon into every deepanalve.dev page for browsers. The site sends `Cache-Control: no-transform` on HTML, which stops it. Postsound and the guestbook still get the beacon.
+- v2 is installed in Deepan's session from `dist/`. The v1 copy is backed up in `~/.local/share/gnome-shell/extension-backups/auto-capture@deepan-v1-2026-11-16`.
+
 ## Uncertain
-- v2 is not loaded in Deepan's own session. Wayland needs a log out to load new extension code.
+- v2 is installed but loads only after Deepan logs out and back in. Nobody has checked it in his real session yet.
 - v2 is not tested on GNOME 45 to 49. The code avoids APIs that changed, but no shell of those versions ran it.
 
 ## Next
-1. With Deepan's OK: push, create the Dokploy compose `ghostshot-site` from `deploy/docker-compose.yml`, deploy, and check it live.
-2. Upload v2 to extensions.gnome.org with a screenshot and the new description.
+1. Deepan logs in to extensions.gnome.org. Then Claude uploads `dist/auto-capture@deepan.shell-extension.zip` and stops before Submit for his OK.
+2. Set the listing URL to ghostshot.deepanalve.dev and add `site/img/og.png` as the screenshot.
 3. Ask Deepan before removing `screenshot-pro.zip`.
