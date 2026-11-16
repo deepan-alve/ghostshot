@@ -36,3 +36,4 @@ GhostShot v2 on extensions.gnome.org, and a product site at ghostshot.deepanalve
 4. Ask Deepan before removing `screenshot-pro.zip`.
 - SEO (2026-11-16): robots.txt names this site's sitemap and https://www.deepanalve.dev/sitemap.xml, which lists every tool (cross-host sitemap). The page has SoftwareApplication JSON-LD and a "More tools" footer line linking the other tools. The portfolio shows the tools as P6 to P8.
 - EGO listing screenshot: docs/hero.png, uploaded 2026-11-16.
+- Search engines (2026-11-16): Google Search Console (domain property), Bing Webmaster (imported from Google) and Yandex Webmaster all have this site. Yandex verifies by the `yandex-verification` meta tag in the page head. Do not remove it. Yandex sitemap upload was read-only during an outage; robots.txt names the sitemap, so Yandex finds it anyway.
