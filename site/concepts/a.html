@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GhostShot · Drag, release, done</title>
+  <meta name="description" content="GhostShot is a GNOME Shell extension. It takes the screenshot when you let go of the mouse. No capture button, no toast.">
+  <meta name="theme-color" content="#0f1012">
+  <link rel="icon" href="/img/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/concepts/a.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/"><img src="/img/mark.svg" alt="" width="26" height="26">GhostShot</a>
+    <nav aria-label="Main">
+      <a href="#keys">Keys</a>
+      <a href="#install">Install</a>
+      <a href="https://github.com/deepan-alve/screenshot-pro">Source</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="pitch">
+        <p class="kicker">GNOME Shell extension · 45 to 50</p>
+        <h1>Drag.<br>Release.<br><span class="hl">Done.</span></h1>
+        <p class="lede">GhostShot takes the screenshot the moment you let go. No capture button. No toast.</p>
+        <div class="ctas">
+          <a class="btn btn-main" href="https://extensions.gnome.org/extension/9786/instant-area-screenshot/">Get it on extensions.gnome.org</a>
+          <a class="btn" href="https://github.com/deepan-alve/screenshot-pro">Source</a>
+        </div>
+      </div>
+
+      <div class="bench">
+        <div class="bench-head">
+          <p class="try">Try it here. Drag over anything below.</p>
+          <div class="modes" role="group" aria-label="What a shot copies">
+            <button type="button" data-mode-btn="image">Image</button>
+            <button type="button" data-mode-btn="text"><kbd data-key="r">R</kbd> Text</button>
+            <button type="button" data-mode-btn="path"><kbd data-key="f">F</kbd> Path</button>
+          </div>
+        </div>
+
+        <div class="stage" data-stage aria-label="Practice area. Drag to select, release to take a shot.">
+          <div class="print">
+            <p class="print-tag">v2.0 · what changed</p>
+            <p class="print-big" id="big">GHOST</p>
+            <ul class="print-list" id="log">
+              <li>Every drag captures, not only the first one.</li>
+              <li>Hold R to copy the text in the area.</li>
+              <li>Hold F to copy the saved file's path.</li>
+              <li>Recording mode never starts by accident.</li>
+            </ul>
+            <p class="print-num"><span>149</span> downloads before v2</p>
+          </div>
+          <p class="ghost-toast" data-toast aria-hidden="true"><b>Screenshot captured</b>You can paste the image from the clipboard</p>
+        </div>
+
+        <div class="clip">
+          <p class="clip-head">Clipboard <span class="clip-count"><span data-count>0</span> shots</span></p>
+          <ol class="tray" data-tray aria-live="polite"></ol>
+          <button type="button" class="sample" data-sample="#log">Capture the list with the keyboard</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="keys" id="keys">
+      <h2>Three ways to let go</h2>
+      <ol class="key-grid">
+        <li>
+          <p class="cap"><kbd>Release</kbd></p>
+          <h3>Image</h3>
+          <p>The shot goes to your clipboard and to ~/Pictures/Screenshots.</p>
+        </li>
+        <li>
+          <p class="cap"><kbd>R</kbd> + release</p>
+          <h3>Text</h3>
+          <p>GhostShot reads the area with tesseract and copies the words.</p>
+        </li>
+        <li>
+          <p class="cap"><kbd>F</kbd> + release</p>
+          <h3>Path</h3>
+          <p>Copies where the file landed, ready for a terminal or a chat.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="install" id="install">
+      <h2>Set up in a minute</h2>
+      <ol class="steps">
+        <li><span>1</span>Install GhostShot from <a href="https://extensions.gnome.org/extension/9786/instant-area-screenshot/">extensions.gnome.org</a>.</li>
+        <li><span>2</span>Press <kbd>Print Screen</kbd> and drag.</li>
+        <li><span>3</span>For text, add tesseract:<code>sudo apt install tesseract-ocr</code></li>
+      </ol>
+    </section>
+
+    <section class="faq">
+      <h2>Questions</h2>
+      <details><summary>Does it still save the file?</summary><p>Yes. GNOME saves every shot in ~/Pictures/Screenshots, as before.</p></details>
+      <details><summary>Where did the toast go?</summary><p>GhostShot drops the "Screenshot captured" toast for its own shots. Every other notification still shows.</p></details>
+      <details><summary>Does screen recording change?</summary><p>No. In recording mode a drag only selects the area, as in stock GNOME.</p></details>
+      <details><summary>Which GNOME versions?</summary><p>GNOME Shell 45 to 50, on Wayland and X11.</p></details>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Made by <a href="https://deepanalve.dev">Deepan Alve</a>. Free under GPL-3.0.</p>
+    <p><a href="https://github.com/deepan-alve/screenshot-pro">GitHub</a></p>
+  </footer>
+
+  <script src="/capture.js"></script>
+</body>
+</html>

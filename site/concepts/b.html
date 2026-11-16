@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GhostShot · Drag, release, done</title>
+  <meta name="description" content="GhostShot is a GNOME Shell extension. It takes the screenshot when you let go of the mouse. No capture button, no toast.">
+  <meta name="theme-color" content="#eef0f3">
+  <link rel="icon" href="/img/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/concepts/b.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/"><img src="/img/mark.svg" alt="" width="24" height="24">GhostShot</a>
+    <a class="top-cta" href="https://extensions.gnome.org/extension/9786/instant-area-screenshot/">Install</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Let go,<br>it's taken.</h1>
+      <div class="hero-side">
+        <p class="lede">GhostShot is a GNOME Shell extension. Drag over an area and release. The shot is on your clipboard before you look for a button.</p>
+        <p class="meta">GNOME 45 to 50 · Free, GPL-3.0</p>
+      </div>
+    </section>
+
+    <section class="sheet-wrap" aria-label="Try GhostShot">
+      <div class="sheet-bar">
+        <p><b>Try it.</b> Drag on the sheet. Hold <kbd data-key="r">R</kbd> for text or <kbd data-key="f">F</kbd> for the path.</p>
+        <div class="modes" role="group" aria-label="What a shot copies">
+          <button type="button" data-mode-btn="image">Image</button>
+          <button type="button" data-mode-btn="text">Text</button>
+          <button type="button" data-mode-btn="path">Path</button>
+        </div>
+      </div>
+
+      <div class="sheet" data-stage aria-label="Practice sheet. Drag to select, release to take a shot.">
+        <div class="cell cell-word"><p class="word">ghost</p><p class="cap">fig. 1, a word</p></div>
+        <div class="cell cell-list" id="log">
+          <p class="cell-title">New in v2</p>
+          <ul>
+            <li>Every drag captures, not only the first.</li>
+            <li>R copies the text in the area.</li>
+            <li>F copies the saved file's path.</li>
+            <li>Recording never starts by accident.</li>
+          </ul>
+        </div>
+        <div class="cell cell-num"><p class="num">149</p><p class="cap">downloads of v1</p></div>
+        <div class="cell cell-shapes" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="cell cell-path"><p class="cap">default folder</p><p class="mono">~/Pictures/Screenshots</p></div>
+        <p class="ghost-toast" data-toast aria-hidden="true"><b>Screenshot captured</b> not shown</p>
+      </div>
+
+      <div class="strip-wrap">
+        <p class="strip-head"><span>Clipboard</span><span><span data-count>0</span> frames</span></p>
+        <ol class="strip" data-tray aria-live="polite"></ol>
+        <button type="button" class="sample" data-sample="#log">Capture the list with the keyboard</button>
+      </div>
+    </section>
+
+    <section class="three">
+      <article>
+        <p class="frame-no">01</p>
+        <h2>Release</h2>
+        <p>The image goes to your clipboard and ~/Pictures/Screenshots.</p>
+      </article>
+      <article>
+        <p class="frame-no">02</p>
+        <h2><kbd>R</kbd> + release</h2>
+        <p>Copies the words in the area. Needs tesseract-ocr.</p>
+      </article>
+      <article>
+        <p class="frame-no">03</p>
+        <h2><kbd>F</kbd> + release</h2>
+        <p>Copies the file path, ready to paste in a terminal.</p>
+      </article>
+    </section>
+
+    <section class="setup" id="install">
+      <h2>Set up</h2>
+      <ol>
+        <li>Install from <a href="https://extensions.gnome.org/extension/9786/instant-area-screenshot/">extensions.gnome.org</a>.</li>
+        <li>Press <kbd>Print Screen</kbd>, drag, release.</li>
+        <li>For text: <code>sudo apt install tesseract-ocr</code></li>
+      </ol>
+      <dl class="qa">
+        <dt>No toast?</dt><dd>Only for GhostShot's own shots. Other notifications still show.</dd>
+        <dt>Recording?</dt><dd>Unchanged. A drag never starts a recording.</dd>
+        <dt>Files?</dt><dd>Saved as before, in ~/Pictures/Screenshots.</dd>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Made by <a href="https://deepanalve.dev">Deepan Alve</a></p>
+    <p><a href="https://github.com/deepan-alve/screenshot-pro">Source on GitHub</a></p>
+  </footer>
+
+  <script src="/capture.js"></script>
+</body>
+</html>
