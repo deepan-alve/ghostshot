@@ -34,3 +34,5 @@ GhostShot v2 on extensions.gnome.org, and a product site at ghostshot.deepanalve
 2. Optional: add `site/img/og.png` as the listing screenshot on extensions.gnome.org.
 3. Deepan mentioned earlier reviewer notes on 2026-11-16, then said to leave them. Nothing was found on the review pages.
 4. Ask Deepan before removing `screenshot-pro.zip`.
+- SEO (2026-11-16): robots.txt names this site's sitemap and https://www.deepanalve.dev/sitemap.xml, which lists every tool (cross-host sitemap). The page has SoftwareApplication JSON-LD and a "More tools" footer line linking the other tools. The portfolio shows the tools as P6 to P8.
+- EGO listing screenshot: docs/hero.png, uploaded 2026-11-16.
