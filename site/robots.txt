@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ghostshot.deepanalve.dev/sitemap.xml
+Sitemap: https://www.deepanalve.dev/sitemap.xml
