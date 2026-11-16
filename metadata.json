@@ -1,8 +1,8 @@
 {
-  "name": "Screenshot Pro",
-  "description": "Restores the classic 'drag and release' screenshot behavior. Automatically captures and resets selection area.",
-  "uuid": "screenshot-pro@deepan.alve",
-  "shell-version": ["45", "46", "47", "48", "49", "50", "50.1"],
-  "version": 1,
-  "url": "https://github.com/deepan-alve/screenshot-pro"
+  "uuid": "auto-capture@deepan",
+  "name": "GhostShot",
+  "description": "Drag, release, done. GhostShot takes the screenshot the moment you let go of the mouse, puts it on your clipboard and skips the toast.\n\nOpen the screenshot tool with Print Screen, then drag over any area. The image is on your clipboard when you release.\n\nHold R while you release to copy the text in the area instead (needs tesseract-ocr). Hold F to copy the saved file's path.\n\nScreen recording works as before.",
+  "shell-version": ["45", "46", "47", "48", "49", "50"],
+  "url": "https://github.com/deepan-alve/ghostshot",
+  "version-name": "2.0"
 }

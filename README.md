@@ -1,51 +1,66 @@
-# Screenshot Pro
+# GhostShot
 
-![GNOME](https://img.shields.io/badge/GNOME-45--50+-4A86CF?logo=gnome&logoColor=white)
-![License](https://img.shields.io/badge/License-GPL--3.0-blue)
+![GNOME 45 to 50](https://img.shields.io/badge/GNOME-45%20to%2050-4A86CF?logo=gnome&logoColor=white)
+![License GPL-3.0-or-later](https://img.shields.io/badge/License-GPL--3.0--or--later-blue)
 
-A GNOME Shell extension that restores classic drag-to-capture screenshot behavior — press a key, drag to select, release to capture. The image lands in your clipboard immediately, with optional one-key OCR.
+Drag, release, done. GhostShot is a GNOME Shell extension. It takes the screenshot when you let go of the mouse.
 
-## Features
+Install it from [extensions.gnome.org](https://extensions.gnome.org/extension/9786/instant-area-screenshot/).
 
-- **Instant capture.** Hides GNOME's central selection rectangle so the screenshot UI activates straight into drag mode.
-- **Clipboard-first.** Captured images go directly to the clipboard. No save dialog, no notification.
-- **Inline OCR.** Hold `R` while capturing and the selection is run through `tesseract`; the extracted text replaces the image on the clipboard.
-- **Suppressed notifications.** Default GNOME screenshot toasts are blocked while the extension is active.
-- **Keyboard configurable.** Triggered by GNOME's standard "Take a screenshot interactively" shortcut — bind `F` (or anything else) via Settings → Keyboard.
+## What it does
 
-## Requirements
+- Takes the shot when you release the drag. You do not press the capture button.
+- Puts the image on your clipboard, and saves it in `~/Pictures/Screenshots` as GNOME does.
+- Hides the old selection box when the screenshot tool opens, so each shot starts clean.
+- Drops GNOME's "Screenshot captured" toast for shots that GhostShot takes. Other notifications still show.
+- Copies the text in the area when you hold `R` while you release. This needs `tesseract-ocr`.
+- Copies the saved file's path when you hold `F` while you release.
+- Leaves screen recording alone. A drag in recording mode never starts a recording.
 
-- GNOME Shell 45 – 50.1
-- `tesseract` on `$PATH` (only required for OCR mode)
+## Use
 
-## Install
+1. Press `Print Screen` to open the screenshot tool.
+2. Drag over an area.
+3. Release the mouse. The image is on your clipboard.
 
-From the packaged ZIP:
+| Hold while you release | Clipboard gets |
+|---|---|
+| Nothing | The image |
+| `R` | The text in the area |
+| `F` | The path of the saved file |
 
-```bash
-gnome-extensions install screenshot-pro@deepan.alve.shell-extension.zip
-gnome-extensions enable  screenshot-pro@deepan.alve
-```
-
-Then bind a key in **Settings → Keyboard → Keyboard Shortcuts → Take a screenshot interactively**.
-
-## Usage
-
-| Key (during selection) | Action                             |
-| ---------------------- | ---------------------------------- |
-| Drag + release         | Capture to clipboard               |
-| Hold `R` + release     | Capture, OCR, copy text to clipboard |
-
-## Build from source
+For text capture, install tesseract:
 
 ```bash
-git clone https://github.com/deepan-alve/screenshot-pro.git
-cd screenshot-pro
-gnome-extensions pack --force --podir=.
+sudo apt install tesseract-ocr
 ```
 
-Produces `screenshot-pro@deepan.alve.shell-extension.zip` ready to install.
+## Build
+
+```bash
+scripts/build.sh
+```
+
+The script writes `dist/auto-capture@deepan.shell-extension.zip`. Install it with:
+
+```bash
+gnome-extensions install --force dist/auto-capture@deepan.shell-extension.zip
+```
+
+On Wayland, log out and back in to load a new version.
+
+## Test
+
+```bash
+test/run-headless.sh
+```
+
+The test starts a headless GNOME Shell with its own home folder and D-Bus. A driver extension drags, holds keys and reads the clipboard. Your own session does not change.
+
+## Names
+
+The extension ID is `auto-capture@deepan`. extensions.gnome.org cannot change an ID, so the ID keeps the first name.
 
 ## License
 
-[GPL-3.0-or-later](LICENSE) — see [NOTICE](NOTICE) for attribution. Copyright (C) 2026 Deepan Alve
+[GPL-3.0-or-later](LICENSE). See [NOTICE](NOTICE) for attribution. Copyright (C) 2026 Deepan Alve.

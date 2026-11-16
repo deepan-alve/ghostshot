@@ -1,0 +1,6 @@
+{
+  "uuid": "ghostshot-test@local",
+  "name": "GhostShot test driver",
+  "description": "Drives GhostShot inside a headless test shell. Never install this in a real session.",
+  "shell-version": ["45", "46", "47", "48", "49", "50"]
+}
