@@ -23,6 +23,8 @@ GhostShot v2 on extensions.gnome.org, and a product site at ghostshot.deepanalve
 - Cloudflare injects its Web Analytics beacon into every deepanalve.dev page for browsers. The site sends `Cache-Control: no-transform` on HTML, which stops it. Postsound and the guestbook still get the beacon.
 - v2 is installed in Deepan's session from `dist/`. The v1 copy is backed up in `~/.local/share/gnome-shell/extension-backups/auto-capture@deepan-v1-2026-11-16`.
 
+- 2026-11-16: the site and README have "Buy me a sticker" (guestbook `?product=ghostshot`) with a GhostShot sticker made by the guestbook generator. README has photos in `docs/`. Evidence: live page checked in Chromium at 1440 and 390 px, no console errors.
+
 ## Uncertain
 - v2 is installed but loads only after Deepan logs out and back in. Nobody has checked it in his real session yet.
 - v2 is not tested on GNOME 45 to 49. The code avoids APIs that changed, but no shell of those versions ran it.
