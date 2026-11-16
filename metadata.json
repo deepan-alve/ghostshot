@@ -1,8 +1,15 @@
 {
   "uuid": "auto-capture@deepan",
   "name": "GhostShot",
-  "description": "Drag, release, done. GhostShot takes the screenshot the moment you let go of the mouse, puts it on your clipboard and skips the toast.\n\nOpen the screenshot tool with Print Screen, then drag over any area. The image is on your clipboard when you release.\n\nHold R while you release to copy the text in the area instead (needs tesseract-ocr). Hold F to copy the saved file's path.\n\nScreen recording works as before.",
-  "shell-version": ["45", "46", "47", "48", "49", "50"],
-  "url": "https://github.com/deepan-alve/ghostshot",
+  "description": "Drag, release, done. GhostShot takes the screenshot the moment you let go of the mouse, puts it on your clipboard and skips the toast.\n\nOpen the screenshot tool with Print Screen, then drag over any area. The image is on your clipboard when you release.\n\nHold R while you release to copy the text in the area instead (needs tesseract-ocr). Hold F to copy the saved file's path.\n\nClipboard use: GhostShot writes to the clipboard only when you take a shot, to put the text (R) or the file path (F) there. It never reads the clipboard.\n\nScreen recording works as before.",
+  "shell-version": [
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50"
+  ],
+  "url": "https://ghostshot.deepanalve.dev",
   "version-name": "2.0"
 }
