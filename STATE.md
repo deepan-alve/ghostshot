@@ -26,7 +26,7 @@ GhostShot v2 on extensions.gnome.org, and a product site at ghostshot.deepanalve
 - 2026-11-16: the site and README have "Buy me a sticker" (guestbook `?product=ghostshot`) with a GhostShot sticker made by the guestbook generator. README has photos in `docs/`. Evidence: live page checked in Chromium at 1440 and 390 px, no console errors.
 
 - 2026-11-17: launch videos on YouTube @deepanalve, both saved as Private until Deepan says publish. Trailer https://youtu.be/LB6PlehBhOA "Screenshot on Linux in One Drag (Free GNOME Extension)" with how-to thumbnail. Short https://youtube.com/shorts/El-htgJs-kI "How to Screenshot on Linux in One Drag #shorts". Both: SEO description, tags, Launch trailers playlist, not for kids, AI No. Sources in brag-output-launch/, brag-output-short/ and youtube/ (git-ignored). Audio -13.9 LUFS, drop at 4.5 s on the release.
-- 2026-11-17 v2 at Deepan's request: light, polished desktop (no black), chat contact Anu, hook headline clear of the window. New uploads, both Private: trailer https://youtu.be/aj_5micm2Ss, Short https://youtube.com/shorts/7rZP_t7S8qk (its description links the new trailer). The v1 uploads LB6PlehBhOA and El-htgJs-kI are still on the channel as Private, waiting for Deepan to say whether to delete them.
+- 2026-11-17 v2 at Deepan's request: light, polished desktop (no black), chat contact Anu, hook headline clear of the window. Now Public: trailer https://youtu.be/aj_5micm2Ss, Short https://youtube.com/shorts/7rZP_t7S8qk (its description links the new trailer). Deepan approved: v1 uploads deleted forever, v2 published. The Short links the trailer as its related video.
 
 ## Uncertain
 - v2 is installed but loads only after Deepan logs out and back in. Nobody has checked it in his real session yet.
