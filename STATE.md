@@ -25,6 +25,8 @@ GhostShot v2 on extensions.gnome.org, and a product site at ghostshot.deepanalve
 
 - 2026-11-16: the site and README have "Buy me a sticker" (guestbook `?product=ghostshot`) with a GhostShot sticker made by the guestbook generator. README has photos in `docs/`. Evidence: live page checked in Chromium at 1440 and 390 px, no console errors.
 
+- 2026-11-17: launch videos on YouTube @deepanalve, both saved as Private until Deepan says publish. Trailer https://youtu.be/LB6PlehBhOA "Screenshot on Linux in One Drag (Free GNOME Extension)" with how-to thumbnail. Short https://youtube.com/shorts/El-htgJs-kI "How to Screenshot on Linux in One Drag #shorts". Both: SEO description, tags, Launch trailers playlist, not for kids, AI No. Sources in brag-output-launch/, brag-output-short/ and youtube/ (git-ignored). Audio -13.9 LUFS, drop at 4.5 s on the release.
+
 ## Uncertain
 - v2 is installed but loads only after Deepan logs out and back in. Nobody has checked it in his real session yet.
 - v2 is not tested on GNOME 45 to 49. The code avoids APIs that changed, but no shell of those versions ran it.
