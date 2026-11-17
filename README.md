@@ -5,6 +5,7 @@
 [![GNOME 45 to 50](https://img.shields.io/badge/GNOME-45%20to%2050-4A86CF?logo=gnome&logoColor=white)](https://extensions.gnome.org/extension/9786/instant-area-screenshot/)
 [![License GPL-3.0-or-later](https://img.shields.io/badge/License-GPL--3.0--or--later-blue)](LICENSE)
 [![Buy me a sticker](https://img.shields.io/badge/Buy%20me%20a%20sticker-ff5a1f)](https://guestbook.deepanalve.dev/sign?product=ghostshot)
+[![Watch on YouTube](https://img.shields.io/badge/Watch-YouTube-ff0000?logo=youtube&logoColor=white)](https://youtu.be/aj_5micm2Ss)
 
 Drag, release, done. GhostShot is a GNOME Shell extension. It takes the screenshot when you let go of the mouse.
 
@@ -13,6 +14,12 @@ Drag, release, done. GhostShot is a GNOME Shell extension. It takes the screensh
 ![Three shots: an image, a file path and the text from the area](docs/demo.png)
 
 The website runs the same flow in your browser. Drag on the camera screen, hold `R` or `F`, and the shot prints below it.
+
+## Watch
+
+[![GhostShot launch trailer: screenshot on Linux in one drag](docs/youtube-thumbnail.jpg)](https://youtu.be/aj_5micm2Ss)
+
+**[Launch trailer on YouTube](https://youtu.be/aj_5micm2Ss)** · **[Vertical Short](https://youtube.com/shorts/7rZP_t7S8qk)** · **[All videos on @deepanalve](https://www.youtube.com/@deepanalve)**
 
 ## What it does
 
